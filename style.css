@@ -1,0 +1,117 @@
+/* =============================================
+   GPYTH CHAT v2.0 — STYLE (DARK MODE)
+   ============================================= */
+:root {
+  --bg:          #0a0a0f;
+  --bg-card:     #16161f;
+  --bg-elev:     #1e1e2a;
+  --border:      #2a2a3a;
+  --text:        #e7e7ef;
+  --text-dim:    #8b8ba3;
+  --primary:     #3b82f6;
+  --primary-hover: #2563eb;
+  --accent:      #8b5cf6;
+  --accent-2:    #ec4899;
+  --success:     #22c55e;
+  --danger:      #ef4444;
+  --radius:      16px;
+  --radius-sm:   10px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+body { background: var(--bg); color: var(--text); line-height: 1.5; -webkit-font-smoothing: antialiased; overflow: hidden; }
+
+/* =============================================
+   HALAMAN LOGIN / DAFTAR
+   ============================================= */
+.auth-page { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; background: radial-gradient(circle at top, rgba(59,130,246,0.15), transparent 50%); overflow-y: auto; }
+.auth-container { width: 100%; max-width: 400px; margin: auto; }
+.logo-section { text-align: center; margin-bottom: 24px; }
+.logo-icon { font-size: 40px; display: inline-block; animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.logo-title { font-size: 28px; font-weight: 800; background: linear-gradient(135deg, var(--primary), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 4px; }
+.logo-tagline { font-size: 13px; color: var(--text-dim); }
+.auth-card { background: var(--bg-card); padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.auth-card h2 { font-size: 20px; margin-bottom: 4px; }
+.auth-desc { font-size: 13px; color: var(--text-dim); margin-bottom: 20px; }
+.input-group { margin-bottom: 16px; }
+.input-group label { display: block; font-size: 12px; color: var(--text-dim); margin-bottom: 6px; font-weight: 600; }
+.input-group input, .input-group textarea { width: 100%; padding: 12px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-size: 14px; outline: none; font-family: inherit; }
+.input-group input:focus, .input-group textarea:focus { border-color: var(--primary); }
+.username-input { display: flex; align-items: center; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 8px; padding-left: 12px; }
+.username-input span { color: var(--text-dim); font-weight: bold; }
+.username-input input { border: none; background: transparent; }
+.terms-check { display: flex; gap: 8px; align-items: flex-start; margin: 16px 0; font-size: 12px; color: var(--text-dim); }
+.terms-check a { color: var(--primary); text-decoration: none; font-weight: bold; }
+.btn { width: 100%; padding: 14px; border: none; border-radius: 8px; font-weight: 700; font-size: 14px; cursor: pointer; transition: 0.2s; font-family: inherit; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.switch-auth { text-align: center; font-size: 13px; color: var(--text-dim); margin-top: 20px; }
+.switch-auth a { color: var(--primary); text-decoration: none; font-weight: bold; }
+
+/* MODAL UMUM */
+.modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); display: none; justify-content: center; align-items: center; z-index: 999; padding: 20px; backdrop-filter: blur(5px); }
+.modal-overlay.active { display: flex; }
+.modal-content { background: var(--bg-card); padding: 24px; border-radius: var(--radius); max-width: 400px; width: 100%; border: 1px solid var(--border); animation: fadeIn 0.3s; }
+.modal-content h2 { margin-bottom: 16px; font-size: 18px; }
+.tos-text { font-size: 13px; color: var(--text-dim); max-height: 250px; overflow-y: auto; margin-bottom: 20px; padding-right: 8px; }
+.tos-text p { margin-bottom: 12px; }
+.tos-text strong { color: var(--text); }
+
+/* =============================================
+   HALAMAN UTAMA (APP)
+   ============================================= */
+.main-app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; padding-bottom: 65px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; padding: 16px; background: var(--bg-card); border-bottom: 1px solid var(--border); z-index: 10; position: sticky; top: 0; }
+.brand { font-size: 18px; font-weight: 800; color: var(--text); }
+.icon-btn { background: transparent; border: none; font-size: 20px; cursor: pointer; color: var(--text); padding: 4px; }
+.tab-content { flex: 1; overflow-y: auto; position: relative; }
+.tab-pane { display: none; padding: 16px; min-height: 100%; }
+.tab-pane.active { display: block; animation: fadeIn 0.2s; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.placeholder-page { text-align: center; margin-top: 60px; color: var(--text-dim); }
+
+/* PROFIL UI */
+.profile-header { background: var(--bg-card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
+.banner { height: 120px; width: 100%; object-fit: cover; background: var(--bg-elev); }
+.profile-info { padding: 0 20px; display: flex; align-items: flex-end; gap: 16px; margin-top: -40px; margin-bottom: 16px; position: relative; }
+.profile-avatar { width: 80px; height: 80px; border-radius: 50%; border: 4px solid var(--bg-card); object-fit: cover; background: var(--bg-elev); box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+.profile-details { padding-bottom: 8px; }
+.profile-details h2 { font-size: 18px; line-height: 1.2; display: flex; align-items: center; gap: 6px; }
+.profile-details p { font-size: 13px; color: var(--text-dim); }
+.verified-badge { background: var(--primary); color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 10px; font-weight: bold; }
+.profile-stats { display: flex; gap: 20px; padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-dim); }
+.profile-stats strong { color: var(--text); font-size: 15px; }
+.profile-bio { padding: 16px 20px; font-size: 14px; border-bottom: 1px solid var(--border); line-height: 1.4; }
+.profile-actions { padding: 16px 20px; display: flex; gap: 10px; }
+.btn-tg { background: #229ED9; color: #fff; text-decoration: none; text-align: center; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 14px; flex: 1; display: flex; justify-content: center; align-items: center; gap: 6px; }
+.btn-tg:hover { background: #1c85b8; }
+
+/* FAB (Tombol +) */
+.fab { position: fixed; bottom: 85px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; font-size: 28px; border: none; box-shadow: 0 6px 20px rgba(59,130,246,0.4); cursor: pointer; z-index: 20; display: flex; justify-content: center; align-items: center; transition: transform 0.2s; }
+.fab:active { transform: scale(0.9); }
+
+/* BOTTOM NAV (4 TOMBOL) */
+.bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; display: flex; background: var(--bg-card); border-top: 1px solid var(--border); z-index: 30; height: 65px; padding-bottom: env(safe-area-inset-bottom); }
+.nav-item { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; background: transparent; border: none; color: var(--text-dim); cursor: pointer; transition: 0.2s; }
+.nav-item.active { color: var(--primary); }
+.nav-icon { font-size: 22px; margin-bottom: 2px; }
+.nav-label { font-size: 10px; font-weight: 600; }
+
+/* SEARCH BAR */
+.search-bar { display: flex; gap: 8px; }
+.search-bar input { flex: 1; padding: 10px 12px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 8px; color: var(--text); outline: none; }
+.user-result { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.user-result-info { display: flex; align-items: center; gap: 12px; }
+.user-result-info img { width: 45px; height: 45px; border-radius: 50%; object-fit: cover; background: var(--bg-elev); }
+.user-result-info h4 { font-size: 14px; margin: 0; }
+.user-result-info p { font-size: 12px; color: var(--text-dim); margin: 0; }
+.btn-sm { padding: 8px 14px; font-size: 12px; border-radius: 6px; width: auto; font-weight: bold; }
+
+/* RESPONSIVE DESKTOP */
+@media (min-width: 640px) {
+  .main-app, .auth-container { max-width: 480px; margin: 0 auto; border-left: 1px solid var(--border); border-right: 1px solid var(--border); box-shadow: 0 0 40px rgba(0,0,0,0.5); }
+  .bottom-nav { max-width: 480px; margin: 0 auto; border-left: 1px solid var(--border); border-right: 1px solid var(--border); left: 50%; transform: translateX(-50%); }
+  .fab { right: calc(50% - 220px); }
+}

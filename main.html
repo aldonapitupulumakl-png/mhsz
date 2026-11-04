@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gpyth Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="main-app">
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <span class="brand" id="pageTitle">Chat Ramai</span>
+    </div>
+    <div class="topbar-right">
+      <button class="icon-btn" id="btnSearch" title="Cari Teman">🔍</button>
+      <span id="adminBadge" style="display:none; color:#fbbf24; font-size:12px; font-weight:bold; margin-left:8px;">👑 ADMIN</span>
+    </div>
+  </header>
+
+  <!-- KONTEN TAB -->
+  <main class="tab-content">
+    
+    <section id="tab-chat" class="tab-pane active">
+      <div class="placeholder-page">
+        <h3>💬 Chat Ramai</h3>
+        <p>Semua orang bisa ngobrol di sini.</p>
+      </div>
+    </section>
+
+    <section id="tab-grup" class="tab-pane">
+      <div class="placeholder-page">
+        <h3>👥 Daftar Grup</h3>
+      </div>
+    </section>
+
+    <section id="tab-dm" class="tab-pane">
+      <div class="placeholder-page">
+        <h3>✉️ Chat Pribadi</h3>
+      </div>
+    </section>
+
+    <!-- TAB PROFIL -->
+    <section id="tab-profil" class="tab-pane">
+      <div class="profile-header">
+        <img id="profileBanner" class="banner" src="https://via.placeholder.com/500x150/1e1e2a/8b8ba3?text=Banner" alt="Banner" />
+        <div class="profile-info">
+          <img id="profileAvatar" class="profile-avatar" src="https://via.placeholder.com/100/2a2a3a/ffffff?text=U" alt="Avatar" />
+          <div class="profile-details">
+            <h2 id="profileName">Memuat...</h2>
+            <p id="profileUsername">@memuat</p>
+            <span class="verified-badge" id="verifiedBadge" style="display:none;">✔️ Verified</span>
+          </div>
+        </div>
+        <div class="profile-stats">
+          <div class="stat"><strong id="statFollowers">0</strong> Teman/Pengikut</div>
+          <div class="stat"><strong id="statAge">0</strong> Tahun</div>
+        </div>
+        <div class="profile-bio" id="profileBio">Bio belum diisi.</div>
+        <div class="profile-actions">
+          <button class="btn btn-outline" id="btnEditProfile">Edit Profil</button>
+          <a href="#" target="_blank" class="btn btn-tg" id="profileTg" style="display:none;">Telegram</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FAB (Bakal dipake di tahap 3) -->
+  <button class="fab" id="fabPost" style="display: none;">+</button>
+
+  <!-- BOTTOM NAVIGATION -->
+  <nav class="bottom-nav">
+    <button class="nav-item active" data-tab="chat">
+      <span class="nav-icon">💬</span><span class="nav-label">Chat Ramai</span>
+    </button>
+    <button class="nav-item" data-tab="grup">
+      <span class="nav-icon">👥</span><span class="nav-label">Grup</span>
+    </button>
+    <button class="nav-item" data-tab="dm">
+      <span class="nav-icon">✉️</span><span class="nav-label">Chat Pribadi</span>
+    </button>
+    <button class="nav-item" data-tab="profil">
+      <span class="nav-icon">👤</span><span class="nav-label">Profil</span>
+    </button>
+  </nav>
+
+  <!-- MODAL EDIT PROFIL -->
+  <div class="modal-overlay" id="editProfileModal">
+    <div class="modal-content">
+      <h2>Edit Profil</h2>
+      
+      <div class="input-group">
+        <label>Foto Profil (Wajib persegi/kotak)</label>
+        <input type="file" id="editAvatar" accept="image/*" />
+      </div>
+      
+      <div class="input-group">
+        <label>Banner (Wajib lebar/mendatar)</label>
+        <input type="file" id="editBanner" accept="image/*" />
+      </div>
+
+      <div class="input-group">
+        <label>Nama</label>
+        <input type="text" id="editName" />
+      </div>
+
+      <div class="input-group">
+        <label>Bio</label>
+        <textarea id="editBio" rows="3" placeholder="Ceritain tentang lu..."></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Link Telegram (Opsional)</label>
+        <input type="text" id="editTg" placeholder="contoh: @maklov1" />
+      </div>
+
+      <div style="display:flex; gap:8px; margin-top:16px;">
+        <button class="btn btn-outline" id="btnCloseEdit">Batal</button>
+        <button class="btn btn-primary" id="btnSaveProfile">Simpan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CARI TEMAN -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-content">
+      <h2>Cari Teman</h2>
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Ketik username teman lu (tanpa @)..." />
+        <button class="btn btn-primary" id="btnDoSearch" style="width: auto; padding: 10px 16px;">Cari</button>
+      </div>
+      <div id="searchResults" style="margin-top: 16px; max-height: 200px; overflow-y: auto;">
+        <!-- Hasil pencarian bakal muncul di sini -->
+      </div>
+      <button class="btn btn-outline" id="btnCloseSearch" style="margin-top:16px;">Tutup</button>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
